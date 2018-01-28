@@ -1,0 +1,117 @@
+.photo-viewer {
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	z-index: 1032;
+}
+
+.photo-viewer > .navbar {
+	margin: 0;
+	z-index: 1033;
+}
+
+.photo-viewer > .navbar li:hover {
+	cursor: pointer; 
+}
+
+.photo-viewer .btn-photo-viewer {
+	border: none;
+	background-color: transparent;
+	color: #777;
+}
+
+.photo-viewer .btn-photo-viewer:hover {
+	color: #FFF;
+}
+
+.photo-viewer .btn-photo-viewer:active {
+	background: radial-gradient(rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0) 50%);
+}
+
+.photo-viewer > .photo-container {
+	position: relative;
+	margin: 0;
+	padding: 0px;
+	background: black;
+	width: 100%;
+	height: calc(100% - 30px - 20px);
+	overflow: visible;
+}
+
+.photo-viewer > .photo-container > .mask-left,
+.photo-viewer > .photo-container > .mask-right,
+.photo-viewer > .photo-container > .mask-top,
+.photo-viewer > .photo-container > .mask-bottom {
+	position: absolute;
+	top: 0;
+	border: none;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 1033;
+}
+
+.photo-viewer > .photo-container > .mask-left,
+.photo-viewer > .photo-container > .mask-right {
+	width: 30px;
+	height: 100%;
+}
+
+.photo-viewer > .photo-container > .mask-left {
+	left: 0;
+}
+
+.photo-viewer > .photo-container > .mask-right {
+	left: calc(100% - 30px);
+}
+
+.photo-viewer > .photo-container > .mask-top,
+.photo-viewer > .photo-container > .mask-bottom {
+	left: 30px;
+	width: calc(100% - 60px);
+}
+
+.photo-viewer > .photo-container > .mask-top {
+	height: 30px;
+}
+
+.photo-viewer > .photo-container > .mask-bottom {
+	top: calc(100% - 50px);
+	height: 50px;
+}
+
+.photo-viewer > .photo-container > .mask-bottom > .photo-viewer-toolbar {
+	height: 100%;
+}
+
+.photo-viewer > .photo-container > .mask-bottom > .photo-viewer-toolbar .photo-viewer-text-info {
+	color: white;
+	display: inline-block;
+}
+
+.photo-viewer > .photo-container > img.photo-presented {
+	position: absolute;
+	left: 30px;
+	top: 30px;
+	margin: 0;
+	padding: 0;
+	border: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	z-index: 1032;
+}
+
+.photo-viewer > .photo-container > img:hover {
+	cursor: -webkit-grab;
+	cursor: -moz-grabbing;
+	cursor: grab;
+}
+
+.photo-viewer > .photo-container > img:active {
+	cursor: move;
+}

@@ -1,0 +1,11 @@
+.deleteCD{
+	float:right;
+}
+.addCD{
+	text-align:center;
+}
+.ui-dialog-titlebar-close{
+	visibility:hidden;
+}
+
+

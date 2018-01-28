@@ -1,0 +1,8 @@
+.tab-pane{
+  position: relative;
+  top:20px;
+}
+
+.div-inline {
+  display: inline
+}

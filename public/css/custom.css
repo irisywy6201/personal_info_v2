@@ -1,0 +1,749 @@
+@font-face {
+    font-family: 'NotoSansCJKtc-Light'; /*a name to be used later*/
+    src: url('/css/fonts/NotoSansCJKtc-Light.otf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'NotoSansCJKtc-DemiLight'; /*a name to be used later*/
+    src: url('/css/fonts/NotoSansCJKtc-DemiLight.otf'); /*URL to font*/
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+  font-family: NotoSansCJKtc-DemiLight !important;
+}
+
+#page-wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+#content {
+	padding-bottom: 360px;
+}
+
+#footer {
+	position: absolute;
+	width: 100%;
+	color: GRAY;
+	text-align: center;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	bottom: 0;
+	z-index: 1030;
+	left: 0;
+}
+
+.footer {
+	margin-bottom: 0;
+	padding-bottom: 10px;
+}
+
+.footer > ul {
+	margin: 5px;
+}
+
+@media (max-width: 768px) {
+	#content {
+		padding-bottom: 400px;
+	}
+}
+
+/* Button smooth animation */
+.btn,
+.btn-nav > a {
+	transition: color 0.2s ease-in-out,
+		background-color 0.2s ease-in-out,
+		border-color 0.2s ease-in-out;
+}
+
+.navbar-nav {
+	color: black;
+	font-weight: bold;
+	font-size: 105%;
+}
+
+/* Remove border (outline) of buttons */
+.btn:focus,
+.btn:active,
+.btn-nav:focus,
+.btn-nav:active,
+.nav-pills:focus,
+.nav-pills:active,
+.nav-tabs:focus,
+.nav-tabs:active,
+.btn-default:focus,
+.btn-default:active,
+.btn-inverse:focus,
+.btn-inverse:active,
+.btn-no-edge:focus,
+.btn-no-edge:active,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-success:focus,
+.btn-success:active,
+.btn-info:focus,
+.btn-info:active,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-danger:focus,
+.btn-danger:active {
+	outline: 0;
+}
+
+/* Resets Bootstrap's default button style. */
+.btn-default,
+.btn-inverse,
+.btn-no-edge,
+.btn-primary,
+.btn-primary.disabled,
+.btn-success,
+.btn-success.disabled,
+.btn-info,
+.btn-info.disabled,
+.btn-warning,
+.btn-warning.disabled,
+.btn-danger,
+.btn-danger.disabled {
+	background: transparent;
+}
+
+.btn-default,
+.btn-no-edge,
+.btn-default.dropdown-toggle {
+	color: #989898;
+	border-color: #989898;
+}
+
+.btn-default:focus,
+.btn-no-edge:focus,
+.btn-default.dropdown-toggle:focus {
+	color: #a2a2a2;
+	background: #e0e0e0;
+}
+
+.btn-default:hover,
+.btn-no-edge:hover,
+.btn-default.dropdown-toggle:hover {
+	color: white;
+	background: #989898;
+}
+
+.btn-default:active,
+.btn-no-edge:active,
+.btn-default.dropdown-toggle:active {
+	background: #6a6a6a;
+}
+
+.btn-nav:hover {
+	background-color: #282828;
+}
+
+/* Resets Bootstrap's button style on nav-inverse. */
+.btn-inverse {
+	color: #999;
+	border-color: #999;
+}
+
+.btn-inverse:focus {
+	color: gray;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-inverse:hover {
+	color: black;
+	background: white;
+}
+
+.btn-inverse:active {
+	color: black;
+	background: white;
+}
+
+/* Resets Bootstrap's primary button style. */
+.btn-primary, .btn-primary.disabled {
+	color: #357ebd;
+	border-color: #357ebd;
+}
+
+.btn-primary:focus {
+	color: #498ac3;
+	background-color: #c2d8eb;
+}
+
+.btn-primary:hover {
+	color: white;
+	border-color: #357ebd;
+	background-color: #357ebd;
+}
+
+.btn-primary:active {
+	border-color: #255884;
+	background-color: #255884;
+}
+
+/* Resets Bootstrap's success button style. */
+.btn-success, .btn-success.disabled {
+	color: #4cae4c;
+	border-color: #4cae4c;
+}
+
+.btn-success:focus {
+	color: #5db65d;
+	background-color: #c9e6c9;
+}
+
+.btn-success:hover {
+	color: white;
+	border-color: #4cae4c;
+	background-color: #4cae4c;
+}
+
+.btn-success:active {
+	border-color: #357935;
+	background-color: #357935;
+}
+
+/* Resets Bootstrap's info button style. */
+.btn-info, .btn-info.disabled {
+	color: #46b8da;
+	border-color: #46b8da;
+}
+
+.btn-info:focus {
+	color: #58bfdd;
+	background-color: #c7e9f3;
+}
+
+.btn-info:hover {
+	color: white;
+	border-color: #46b8da;
+	background-color: #46b8da;
+}
+
+.btn-info:active {
+	border-color: #318098;
+	background-color: #318098;
+}
+
+/* Resets Bootstrap's warning button style. */
+.btn-warning, .btn-warning.disabled {
+	color: #eea236;
+	border-color: #eea236;
+}
+
+.btn-warning:focus {
+	color: #efab4a;
+	background-color: #f9e3c2;
+}
+
+.btn-warning:hover {
+	color: white;
+	border-color: #eea236;
+	background-color: #eea236;
+}
+
+.btn-warning:active {
+	border-color: #a67125;
+	background-color: #a67125;
+}
+
+/* Resets Bootstrap's danger button style. */
+.btn-danger, .btn-danger.disabled {
+	color: #d43f3a;
+	border-color: #d43f3a;
+}
+
+.btn-danger:focus {
+	color: #d8524d;
+	background-color: #f2c5c3;
+}
+
+.btn-danger:hover {
+	color: white;
+	border-color: #d43f3a;
+	background-color: #d43f3a;
+}
+
+.btn-danger:active {
+	border-color: #942c28;
+	background-color: #942c28;
+}
+
+/* Button without border. */
+.btn-no-edge {
+	border: none;
+}
+
+.confirmMessage {
+	position: fixed;
+	width: 500px;
+	top: calc(50%);
+	left: calc(50% - 250px);
+	z-index: 1033;
+	display: none;
+}
+
+.contributors-panel .thumbnail {
+	width: 100%;
+}
+
+@media (min-width: 650px) {
+	.contributors-panel .thumbnail {
+		margin-right: 30px;
+		max-width: 300px;
+	}
+}
+
+.dropdown > .dropdown-menu {
+	z-index: 1031;
+}
+
+.dropdown > .dropdown-menu > li.active .badge {
+	color: #337ab7;
+	background-color: white;
+}
+
+.dropdown > .dropdown-menu > li:hover {
+	cursor: pointer;
+}
+
+hr.darker {
+	border-color: #D8D8D8;
+}
+
+.editor-focus {
+	border-color: #00AAE7;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.hidden-feedback, .edit-field {
+	margin: 0;
+	display: none;
+}
+
+.scroll-top {
+	position: fixed;
+	right: 5%;
+	bottom: 30px;
+	font-size: 30px;
+	color: rgba(0, 0, 0, 0.5);
+	z-index: 1031;
+	transition: color 0.2s ease-in-out;
+}
+
+.scroll-top:hover {
+	color: #428bca;
+	cursor: pointer;
+}
+
+.scroll-top:active {
+	color: #2a6496;
+}
+
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+}
+
+.fileUpload > input.upload {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.font-size-dropdown > .form-control {
+	width: 10px;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.has-error .note-editor {
+	border-color: #a94442;
+}
+
+.has-error .editor-focus {
+	border-color: #843534;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+			box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 6px #ce8483;
+}
+
+#lockScreen {
+	position: fixed;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1032;
+	display: none;
+}
+
+.marquee:hover {
+	background-color: #f5f5f5;
+}
+
+.must-fill {
+	color: #a94442;
+}
+
+.myDropdown {
+	padding: 0;
+	overflow: hidden;
+}
+
+.myDropdown > select {
+	border: 0;
+	border-radius: 0;
+	padding: 0;
+	background: transparent;
+	-webkit-appearance: none;
+	height: 100%;
+	width: calc(100% + 15px);
+	text-align: left;
+}
+
+.myDropdown > select > option {
+	background: white;
+	padding-left: 3px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: black;
+}
+
+.myDropdown > .caret {
+	position: relative;
+	right: 35px;
+}
+
+.navbar-user-news-reminder {
+	position: absolute;
+	right: 20px;
+	top: -13px;
+	width: 25px;
+	height: 25px;
+	padding: 0;
+	border-style: solid;
+	border-radius: 50%;
+	border-width: 2px;
+	border-color: red;
+	color: white;
+	background-color: red;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.navbar-user-news-reminder:before {
+	content: "!";
+}
+
+.navbar-searchbox-dropdown {
+	display: inline-block;
+	width: 250px;
+}
+
+.navbar-user-id {
+	cursor: default;
+}
+
+.news {
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0;
+}
+
+.no-wrap {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.real-time-search-bar .loading {
+	margin-left: 10px;
+}
+
+.real-time-search-bar-result > .search-result {
+	display: none;
+}
+
+.suggestion-helper {
+	position: fixed;
+	right: 9%;
+	top: calc(50% - 100px);
+	width: 60%;
+	z-index: 1032;
+	display: none;
+}
+
+.suggestion-helper > .panel > .panel-heading:hover {
+	cursor: -webkit-grab;
+	cursor: -moz-grabbing;
+	cursor: grab;
+}
+
+.suggestion-helper > .panel > .panel-heading:active {
+	cursor: move;
+}
+
+.suggestion-helper > .panel {
+	background: rgba(255, 255, 255, 0.85);
+}
+
+.suggestion-helper > .panel > .panel-heading > .panel-heading-tools > .panel-heading-btn {
+	padding: 0;
+	padding-left: 5px;
+	padding-right: 5px;
+	background: transparent;
+}
+
+.suggestion-helper > .panel > .panel-heading > .panel-heading-tools > .panel-heading-btn:hover {
+	color: white;
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.suggestion-helper > .panel > .table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.suggestion-helper > .panel > .panel-body a:hover,
+.suggestion-helper > .panel > .table a:hover {
+	cursor: pointer;
+}
+
+.suggestion-helper > .panel > .panel-body,
+.suggestion-helper > .panel > .table > tbody > tr > th,
+.suggestion-helper > .panel > .table > tbody > tr > td,
+.suggestion-helper > .panel > .list-group > .list-group-item {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space : nowrap;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.page-alert {
+	position: fixed;
+	top: 30px;
+	left: 35px;
+	width: calc(100% - 70px);
+	z-index: 1031;
+}
+
+@media only screen and (max-device-width: 480px) {
+	.text-break-sm {
+		display: inline-block;
+		word-break: break-all;
+		word-wrap: all;
+	}
+}
+
+textarea {
+	resize: vertical;
+}
+
+#banner {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	top: 50px;
+	width: 100%;
+	height: 380px;
+	background-image: url('/img/banner.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+@media only screen and (max-device-width: 1440px) {
+	#banner {
+		background-image: url('/img/banner_laptops_lg.jpg');
+	}
+}
+
+@media only screen and (max-device-width: 1280px) {
+	#banner {
+		background-image: url('/img/banner_laptops_sm.jpg');
+	}
+}
+
+@media only screen and (max-device-width: 1024px) {
+	#banner {
+		background-image: url('/img/banner_pads.jpg');
+	}
+}
+
+@media only screen and (max-device-width: 480px) {
+	#banner {
+		background-image: url('/img/banner_phones.jpg');
+	}
+}
+
+/* index announcement board */
+.announcementBoard{
+	overflow:hidden;
+	height:20px;
+	width:100%;
+}
+
+.announcement-img {
+	margin-top: -1px;
+}
+
+.zoomable:hover {
+	cursor: zoom-in;
+}
+
+/* sdRecord */
+.detail-section-background {
+	background-color: rgba(240,240,240,0.6);
+	border-style: solid;
+	border-width: thin;
+	border-color: rgba(200,200,200,0.6);
+	padding: 4%;
+	margin-bottom: 1%;
+}
+.scollable-list {
+	max-height: 600%;
+	width: auto;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+.search-bar-inline {
+	display: inline-block;
+}
+.filter-search {
+	margin-left: 15px;
+}
+.custom-label {
+	color: rgba(120,120,120,0.8);
+	border-style: solid;
+	border-width: 1px;
+	border-radius: 5px 5px 5px 5px;
+	border-color: rgba(120,120,120,0.8);
+	background-color: rgba(0,0,0,0);
+}
+.custom-label-red {
+	color: rgba(200,40,40,0.8);
+	border-color: rgba(200,40,40,0.8);
+}
+.custom-label-blue {
+	color: rgba(40,40,200,0.8);
+	border-color: rgba(40,40,200,0.8);
+}
+.cutom-search-font {
+	font-weight: normal;
+	font-size: 90%;
+}
+@media only screen and (min-device-width: 1200px) {
+	.verticalDivider {
+		margin-left: 10px;
+		border-style: solid;
+		border-radius: 3px 3px 3px 3px;
+		border-width: 1px;
+		color: rgba(0, 0, 0, 0.4);
+		box-shadow: 0px 0px 1px rgba(120, 120, 120, 0.4);
+	}
+}
+/* sdRecord end */
+
+/* Admin */
+#admin-content .nav-pills h4 {
+	margin-top: 3px;
+	margin-bottom: 4px;
+}
+#admin-content .well {
+	min-height: 450px;
+	padding-left: 2%;
+	padding-right: 2%;
+	padding-top: 2%;
+}
+#admin-content hr {
+	border-color: black;
+}
+#admin-display {
+	background-color: #F5F5F5;
+	border: 1px solid #E3E3E3;
+	padding-left: 3%;
+	padding-right: 3%;
+	padding-bottom: 3%;
+}
+
+#admin-display .table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+	background-color: #FFF;
+}
+
+/* Admin sdRecord */
+.admin-invisible {
+	background-color: rgba(220, 220, 220, 0.4);
+	color: rgba(0, 0, 0, 0.2);
+}
+#admin-display .table-hover > tbody > tr.admin-invisible:hover > td{
+	background-color: rgba(220, 220, 220, 0);
+}
+
+/* the tribute of zooming picture */
+/* the zooming picture will permanently show above */
+/* currently just show in lostandfound */
+.zoom-img-wrap{
+	position: absolute;
+	z-index: 9999;
+}
+
+
+/*Reset navbar-inverse style*/
+/* navbar */
+.navbar-inverse {
+    background-color: rgba(38,38,38,1);
+    /*border-color: #E7E7E7;*/
+    font-family: NotoSansCJKtc-Light;
+}
+/* title */
+/*.navbar-inverse .navbar-brand {
+    color: #777;
+}*/
+/*.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+    color: #5E5E5E;
+}*/
+/* link */
+.navbar-inverse .navbar-nav > li > a {
+    font-size: 96%;
+    color: rgba(210,210,210,1);
+    border-style: solid;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-color: rgba(50, 50, 50, 0.8);
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: rgba(160,160,160,1);
+    background-color: rgba(45,45,45,1);
+}
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: rgba(200,200,200,1);
+    background-color: rgba(8,8,8,1);
+}
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    color: rgba(200,200,200,1);
+    background-color: rgba(60,60,60,1);
+}

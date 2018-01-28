@@ -1,0 +1,40 @@
+<?php
+	/*return [
+		'managereadme' => '管理KMS認證公告',
+		'createDocument' => '新增說明',
+		'readme' => 'kms認證公告',
+		'title_zh' => '標題(中文)',
+		'title_en' => '標題(英文)',
+		'describe_zh' => '中文版簡述',
+		'describe_en' => '英文版簡述',
+		'content_zh' => '中文版說明',
+		'content_en' => '英文版說明',
+		'editreadme' => '編輯說明',
+	];*/
+	return [
+		'category' => '分類',
+		'department' => '單位',
+		'change' => '變更',
+		'search' => '搜尋',
+		'cancelSearch' =>'取消搜尋',
+		'registered' => '註冊',
+		'notRegistered' => '未註冊',
+		'notRegisteredEmail' => '未註冊Email',
+		'search' => '搜尋',
+		'status' => '狀態',
+		'edit' => '編輯',
+		'delete' => '刪除',
+		'detail' => '詳細資料',
+		'submit' => '送出',
+		'keyword' => '請輸入關鍵字',
+		'created_at' => '開始日期',
+		'updated_at' => '更新日期',
+		'hide' => '隱藏',
+		'account' => '帳號',
+		'identity' =>'身份',
+		'username'=>'使用者名稱',
+		'email' => '信箱',
+		'goback' => '返回',
+	];	
+	
+?>

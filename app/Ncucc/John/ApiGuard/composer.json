@@ -1,0 +1,34 @@
+{
+    "name": "john/api-guard",
+    "description": "A simple way of authenticating your APIs with API keys using Laravel",
+    "keywords": [
+        "api",
+        "rest",
+        "json",
+        "api keys",
+        "api authentication",
+        "laravel"
+    ],
+    "homepage": "https://github.com/john/ApiGuard",
+    "authors": [
+        {
+            "name": "John Wang",
+            "email": "john29917958@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "illuminate/database": "*",
+        "ellipsesynergie/api-response": "0.8.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-4": {
+            "John\\ApiGuard\\": "src/John/ApiGuard"
+        }
+    },
+    "minimum-stability": "stable"
+}
