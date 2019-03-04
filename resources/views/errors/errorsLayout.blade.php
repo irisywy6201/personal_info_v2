@@ -11,6 +11,5 @@
   <hr>
   @yield('errors.content')
   <br>
-  @include('errors.footer')
 </div>
 @stop

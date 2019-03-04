@@ -1,54 +1,17 @@
-@section("footer")
-
-<footer id="footer">
-  <div class="navbar navbar-inverse footer">
-    <ul class="nav navbar-nav">
-      <li class="btn-nav">{!! HTML::link('http://www.ncu.edu.tw/', Lang::get('menu.ncu'), ['target' => '_blank']) !!}</li>
-      <li class="btn-nav">{!! HTML::link('http://www.cc.ncu.edu.tw/', Lang::get('menu.ncucc'), ['target' => '_blank']) !!}</li>
-      <li class="btn-nav">{!! HTML::link('about', Lang::get('menu.about')) !!}</li>
-      <li class="btn-nav">{!! HTML::link('systemProblem', Lang::get('menu.contactUs')) !!}</li>
-    </ul>
-    {{-- Language settings --}}
-    <ul class="nav navbar-nav navbar-right">
-      <li class="btn-nav">
-        @if(App::getLocale() != 'en')
-          <a href="{{ URL::to('lang/en') }}">
-            <span class="glyphicon glyphicon-globe"></span>
-            {{ Lang::get('menu.english') }}
-          </a>
-        @else
-          <a href="{{ URL::to('lang/zh_TW') }}">
-            <span class="glyphicon glyphicon-globe"></span>
-            {{ Lang::get('menu.chinese') }}
-          </a>
-        @endif
-      </li>
-    </ul>
-    <br><br><br>
-    <p class="text-center" style="color:#888888;">
-
-      {{ Lang::get('menu.webcall') }}
-      {!! HTML::link('http://140.115.19.96:60080/webcall/?auto_dial=1&uri=97820055', Lang::get('menu.webcallNumbers.0'), ['target' => '_blank']) !!}
-      {!! HTML::link('http://140.115.19.96:60080/webcall/?auto_dial=1&uri=97820066', Lang::get('menu.webcallNumbers.1'), ['target' => '_blank']) !!}
-      <br>
-      {{ Lang::get('menu.address') }}
-      <br>
-      {{ Lang::get('menu.telephone') }}
-      <br>
-      {{ Lang::get('menu.email') }}
-      {!! HTML::link('mailto:ncucc@ncu.edu.tw', 'ncucc@ncu.edu.tw') !!}
-      <br>
-      {{ Lang::get('menu.copyright') }}
-      <br>
-      <br>
-      <a class="btn btn-inverse" href="https://www.facebook.com/ncuccsd/?fref=ts" target="_blank">
-        <i class="fa fa-facebook-official"></i>
-        {{ Lang::get('menu.followUs') }}
-      </a>
-      <br>
-      <br>
-    </p>
-  </div>
+<footer class="footer text-center" >
+  <p style="font-size:13px">國立中央大學 版權所有<br>
+  校址：(32001)桃園市中壢區中大路300號   總機電話：03-4227151  傳真：03-4226062<br>
+  緊急事件聯絡電話：03-2805666、校內分機57212(軍訓室)<br>
+  03-4267144、校內分機57119(駐警隊)</p>
 </footer>
-
-@show
+<style>
+  .footer{
+    border-top:#d1e0e0 solid 1px;
+    background-color: #adad85;
+    margin-left:-15px;
+    margin-right:-15px;color:#f0f5f5;
+    padding:10px;
+    letter-spacing:2px;
+    line-height: 24px;
+  }
+</style>
