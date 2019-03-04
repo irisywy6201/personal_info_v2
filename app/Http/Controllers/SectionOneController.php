@@ -52,12 +52,16 @@ class SectionOneController extends Controller
 
     if($type==1){
       $SectionOne->title=$request->title;
-      $name=pathinfo($request->content->getClientOriginalName(), PATHINFO_FILENAME);
-      $ext=pathinfo($request->content->getClientOriginalName(), PATHINFO_EXTENSION);
+	  if($request->content==null){
+		  
+	  }else{
+		  $name=pathinfo($request->content->getClientOriginalName(), PATHINFO_FILENAME);
+		  $ext=pathinfo($request->content->getClientOriginalName(), PATHINFO_EXTENSION);
 
-      $fname=$name.'.'.$ext;
-      $request->content->move(storage_path('/file'), $fname);
-      $SectionOne->content=$fname;
+		  $fname=$name.'.'.$ext;
+		  $request->content->move(storage_path('/file'), $fname);
+		  $SectionOne->content=$fname; 
+	  }    
       $SectionOne->save();
     }else{
       $SectionOne->title=$request->title;

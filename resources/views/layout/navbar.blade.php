@@ -1,4 +1,4 @@
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom" style="background-color:#333">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom" style="background-color:#adad85">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">

@@ -43,7 +43,7 @@ class HomeController extends Controller
     }
 
     public function showtwo($id,$title){
-      $SectionTwo=SectionTwo::find($title);
+      $SectionTwo=SectionTwo::find($id);
       $type=$SectionTwo->type;
       if($type==1){
         $filename = $SectionTwo->content;
@@ -63,7 +63,7 @@ class HomeController extends Controller
     }
 
     public function showthree($id,$title){
-       $SectionThree=SectionThree::find($title);
+       $SectionThree=SectionThree::find($id);
       $type=$SectionThree->type;
       if($type==1){
         $filename = $SectionThree->content;

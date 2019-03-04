@@ -1,6 +1,6 @@
-@extends("layout")
+@extends('layout.index')
 @section("content")
-
+<br><br>
 {!! Form::open(["route" => "netid", "autocomplete" => "off", 'class' => 'form-horizontal']) !!}
   <fieldset>
     <div class="form-group">
@@ -13,9 +13,9 @@
     </div>
   </fieldset>
 {!! Form::close() !!}
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 @stop
 @section("footer")
   @parent
-  <script src="//polyfill.io"></script>
+  <script src="//polyfill.io"></script> 
 @stop

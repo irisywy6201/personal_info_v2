@@ -1,140 +1,77 @@
-@section("navbar")
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom" style="background-color:#006666">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand" href="{{ url('/') }}"><span><img src="http://www.ncu.edu.tw/assets/thumbs/pic/df1dfaf0f9e30b8cc39505e1a5a63254.png" height="25" width="25" ><img src="/img/title.png" alt=""height="25"></span></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" data-target="#navbar-main" data-toggle="collapse" type="button">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="myNavbar" >
+            <ul class="nav navbar-nav navbar-right " >
+			 @if(Auth::user())
+                    <li>
+                        <a href="{{ url('/admin') }}" style="color:#fff">後臺管理</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color:#fff">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    登出
+                                </a>
 
-    <div class="navbar-collapse bs-navbar-collapse collapse" id="navbar-main" role="navigation">
-      {{-- Main navigation options --}}
-      <ul class="nav navbar-nav">
-        @foreach (AppConfig::$navbar as $tag => $nav)
-          @if (MenuUtils::showable($nav))
-            @if (array_key_exists ('submenu', $nav))
-              <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="{{ 'navtag-' . $tag }}">{{ Lang::get('menu.' . $tag) }}
-                  @if (array_key_exists ('badge', $nav))
-                    <span class="badge" id="{{ $nav{'badge'}{'id'} }}">{{ $nav{'badge'}{'value'} }}</span>
-                  @endif
-                  <span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="{{ 'navtag-' . $tag }}">
-                  @foreach ($nav{'submenu'} as $stag => $snav)
-                    @if (MenuUtils::showable($snav))
-                      @if (array_key_exists ('divider', $snav))
-                        <li class="divider"></li>
-                      @elseif (array_key_exists ('route', $snav))
-                        <li>
-                          {!! HTML::link($snav['route'], Lang::get('menu.' . $tag . '.' . $stag), array ('tabindex' => -1)) !!}
-                        </li>
-                      @else
-                        <li>
-                          {!! HTML::link($tag . '/' . $stag, Lang::get('menu.' . $tag . '.' . $stag), array ('tabindex' => -1)) !!}
-                        </li>
-                      @endif
-                    @endif
-                  @endforeach
-                </ul>
-              </li>
-            @elseif (array_key_exists ('badge', $nav))
-              <li class="btn-nav">
-                <a href="{{ URL::to($tag) }}">
-                  {{ Lang::get('menu.' . $tag) }}
-                  <span class="badge" id="{{ $nav{'badge'}{'id'} }}">
-                    {{ $nav{'badge'}{'value'} }}
-                  </span>
-                </a>
-              </li>
-            @else
-              <li class="btn-nav">
-                {!! HTML::link($tag, Lang::get('menu.' . $tag)) !!}
-              </li>
-            @endif
-          @endif
-        @endforeach
-      </ul>
-
-      {{-- In-site search --}}
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown btn-nav">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="search-dropdown">
-            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="search-dropdown">
-            <li>
-            {!! Form::open(["url" => "/searching", "method" => "get", "class" => "navbar-form navbar-left"]) !!}
-              <fieldset>
-                  <div class="navbar-searchbox-dropdown">
-                    <div class="form-group">
-                      {!! Form::text("query", Input::old("query"), ["class" => "form-control", "placeholder" => Lang::get("menu.placeholder")]) !!}
-                    </div>
-                    <input class="btn btn-inverse" type="submit" value="{{ Lang::get('menu.search') }}"/>
-                  </div>
-              </fieldset>
-            {!! Form::close() !!}
-            </li>
-          </ul>
-        </li>
-
-        {{-- User account --}}
-        @if (!Auth::check())
-          <li class="btn-nav">
-            <a href="{{ URL::to('login') }}">
-              <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-              {{ Lang::get('menu.login') }}
-            </a>
-          </li>
-        @else
-          <li class="dropdown btn-nav">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="user-tools">
-              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              @if(Auth::user()->notReadQuesCount()->count())
-                <span class="navbar-user-news-reminder"></span>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+              @else
+					{!! Form::open(["route" => "netid", "autocomplete" => "off" ,"class" => "form-horizontal", "id"=> "myForm"]) !!}
+					<li class="page-scroll navbtn"> 
+						<a class="submit" href="#" style="color:#fff">登入</a>	
+					</li>
               @endif
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="user-tools">
-              <li class="text-left">
-                <a class="navbar-user-id" href="">Hi! {{ Auth::user()->acct }}</a>
-              </li>
-              <li class="divider"></li>
-              <li>
-                {!! HTML::link('userinfo', Lang::get('menu.userinfo')) !!}
-              </li>
-              <li>
-                <a href="{{ URL::to('msg_board/userquestion') }}">
-                  {{ Lang::get('menu.msg_board/userquestion') }}
-                  @if($newReplyCount = Auth::user()->notReadQuesCount->count())
-                    <span class="badge">
-                      {{ $newReplyCount }}
-                    </span>
-                  @endif
-                </a>
-              </li>
-              <li>
-                {!! HTML::link('email/' . Auth::user()->email()->where('verified', true)->pluck('id') . '/edit', Lang::get('menu.editEmail')) !!}
-              </li>
-              <!-- @if(Auth::check() && Auth::user()->isStaff())
-                <li>
-                  {!! HTML::link('apiKey', Lang::get('apiKeyManagement.myAPIKeys')) !!}
-                </li>
-              @endif -->
-              <li class="divider"></li>
-              <li>
-                {!! HTML::link('logout', Lang::get('menu.logout')) !!}
-              </li>
+              
+                <li class="page-scroll navbtn">
+                    <a href="http://www.ncu.edu.tw/" style="color:#fff">中大首頁</a>
+                </li>{!! Form::close() !!}
+					
+                
+                
+
             </ul>
-          </li>
-        @endif
+        </div>
 
-      </ul>
+        <!-- /.navbar-collapse -->
     </div>
-  </div>
-</div>
+    <!-- /.container-fluid -->
+</nav><br><br>
+<script>
+$(document).ready(function(){
+    $("a.submit").click(function(){
+        document.getElementById("myForm").submit();
+    }); 
+});
+</script>
+<style>
+  /* Remove the navbar's default margin-bottom and rounded borders */
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  .navbtn{
+      border-color: #f5f5dc;
+      border-right-style:solid ;
+  }
 
-@show
+</style>

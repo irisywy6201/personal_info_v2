@@ -39,6 +39,7 @@ Route::resource('admin/其它','SectionThreeController');
 /******************************************************
  * Login routes
  ******************************************************/
+
 Route::any('login', array ('as' => 'netid', 'uses' => 'NetIDController@login'));
 Route::any('logout', array ('as' => 'logout', 'uses' => 'NetIDController@logout'));
 Route::any('loginAndReturn', function()
